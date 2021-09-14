@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/swipe_refresh_layout"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+
+  <com.wuc.conflict.nest_scroll.NestedScrollLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="vertical">
+
+      <com.wuc.conflict.views.xxrecyclerview.FixedDataScrollDisabledRecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+      <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.tabs.TabLayout
+          android:id="@+id/tablayout"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content" />
+
+        <androidx.viewpager2.widget.ViewPager2
+          android:id="@+id/viewpager_view"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent" />
+      </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+  </com.wuc.conflict.nest_scroll.NestedScrollLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
