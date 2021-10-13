@@ -6,6 +6,6 @@
 
 ### 效果图
 
-![](https://github.com/wuchao226/ConflictProject/blob/master/images/preview.gif)
+![](https://github.com/wuchao226/ConflictProject/blob/master/images/preview2.gif)
 
 
