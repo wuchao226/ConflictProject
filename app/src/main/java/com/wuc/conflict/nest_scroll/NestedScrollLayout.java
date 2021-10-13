@@ -128,9 +128,13 @@ public class NestedScrollLayout extends NestedScrollView {
     }
   }
 
+  /**
+   * child每次滚动前，可以先询问parent是否要滚动，即调用dispatchNestedScroll（），
+   * 这时可以回调到parent的OnNestedPreScroll（），parent可以在这个回调中先于child滚动
+   */
   @Override
-  public void onNestedPreScroll(@NonNull View target, int dx, int dy, @NonNull int[] consumed) {
-    super.onNestedPreScroll(target, dx, dy, consumed);
+  public void onNestedPreScroll(@NonNull View target, int dx, int dy, @NonNull int[] consumed, int type) {
+    Log.i("NestedScrollLayout", getScrollY() + "::onNestedPreScroll::" + mTopView.getMeasuredHeight());
     Log.i(TAG, getScrollY() + "::onNestedPreScroll::" + mTopView.getMeasuredHeight());
     // 向上滑动。若当前topview可见，需要将topview滑动至不可见
     // 向上滚动并且已经滚动的距离小于头部 mTopView 的高度
@@ -139,21 +143,6 @@ public class NestedScrollLayout extends NestedScrollView {
       // parent 滚动 dy 距离
       scrollBy(0, dy);
       // 告诉 child parent 消耗了 dy 距离，child 不用消耗了
-      consumed[1] = dy;
-    }
-  }
-
-  /**
-   * child每次滚动前，可以先询问parent是否要滚动，即调用dispatchNestedScroll（），
-   * 这时可以回调到parent的OnNestedPreScroll（），parent可以在这个回调中先于child滚动
-   */
-  @Override
-  public void onNestedPreScroll(@NonNull View target, int dx, int dy, @NonNull int[] consumed, int type) {
-    Log.i("NestedScrollLayout", getScrollY() + "::onNestedPreScroll::" + mTopView.getMeasuredHeight());
-    // 向上滑动。若当前topview可见，需要将topview滑动至不可见
-    boolean hideTop = dy > 0 && getScrollY() < mTopView.getMeasuredHeight();
-    if (hideTop) {
-      scrollBy(0, dy);
       consumed[1] = dy;
     }
   }

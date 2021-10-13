@@ -37,6 +37,7 @@ public class NestedViewPagerActivity2 extends AppCompatActivity {
     mBinding.tablayoutViewpager.post(new Runnable() {
       @Override
       public void run() {
+        // 设置 tablayout_viewpager 的高度和 NestedScrollView 的高度一样
         mBinding.tablayoutViewpager.getLayoutParams().height = mBinding.nestedscrollview.getMeasuredHeight();
         mBinding.tablayoutViewpager.requestLayout();
       }

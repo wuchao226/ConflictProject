@@ -32,6 +32,10 @@ public class NestedScrollLayout2 extends NestedScrollView {
 
     }
 
+    /**
+     * child每次滚动前，可以先询问parent是否要滚动，即调用dispatchNestedScroll（），
+     * 这时可以回调到parent的OnNestedPreScroll（），parent可以在这个回调中先于child滚动
+     */
     @Override
     public void onNestedPreScroll(@NonNull View target, int dx, int dy, @NonNull int[] consumed, int type) {
         // tablayout_viewpager 的高度和 NestedScrollView 的高度一样，
