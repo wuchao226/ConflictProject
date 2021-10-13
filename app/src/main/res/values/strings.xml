@@ -9,5 +9,6 @@
   <string name="webview_conflict">Webview滑动冲突</string>
   <string name="two_scroll">二级联动</string>
   <string name="nested_scroll">二级嵌套滑动</string>
+  <string name="nested_scroll2">二级嵌套滑动2</string>
   <string name="nested_scroll_test">二级嵌套滑动测试</string>
 </resources>

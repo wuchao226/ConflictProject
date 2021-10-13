@@ -11,21 +11,22 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.wuc.conflict.R;
 import com.wuc.conflict.views.xxrecyclerview.RecyclerAdapter;
+import com.wuc.conflict.views.xxrecyclerview.RecyclerAdapter2;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RecyclerViewFragment extends Fragment {
+public class RecyclerViewFragment2 extends Fragment {
 
   private RecyclerView recyclerView;
 
   @Nullable
   @Override
   public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-    View view = inflater.inflate(R.layout.fragment_recycler_view, container, false);
+    View view = inflater.inflate(R.layout.fragment_recycler_view2, container, false);
 
     recyclerView = view.findViewById(R.id.recycler_view);
     recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-    final RecyclerAdapter adapter = new RecyclerAdapter(getData());
+    final RecyclerAdapter2 adapter = new RecyclerAdapter2(getData());
     recyclerView.setAdapter(adapter);
 
     recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <data>
+
+    <variable
+      name="viewModel"
+      type="com.wuc.conflict.views.titleview.TitleViewViewModel" />
+
+    <import type="android.view.View" />
+
+    <import type="android.text.TextUtils" />
+
+    <import type="androidx.databinding.ObservableField" />
+  </data>
+
+  <androidx.appcompat.widget.AppCompatImageView
+    android:id="@+id/item_file_name"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_margin="16dp"
+    android:scaleType="centerCrop" />
+</layout>
